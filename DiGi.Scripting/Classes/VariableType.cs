@@ -1,12 +1,11 @@
-﻿using DiGi.Core;
-using DiGi.Core.Classes;
+﻿using DiGi.Core.Classes;
 using DiGi.Core.Interfaces;
-using DiGi.Scripting.Core.Interfaces;
+using DiGi.Scripting.Interfaces;
 using System;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
-namespace DiGi.Scripting.Core.Classes
+namespace DiGi.Scripting.Classes
 {
     public class VariableType : SerializableObject, INamedObject, IScriptingSerializableObject
     {

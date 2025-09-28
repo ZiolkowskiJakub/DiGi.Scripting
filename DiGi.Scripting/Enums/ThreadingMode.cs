@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace DiGi.Scripting.Core.Enums
+namespace DiGi.Scripting.Enums
 {
     [Description("Threading Mode")]
     public enum ThreadingMode

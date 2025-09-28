@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DiGi.Scripting.Core.Classes
+namespace DiGi.Scripting.Classes
 {
     public class Data : Dictionary<string, dynamic>
     {
@@ -9,7 +9,7 @@ namespace DiGi.Scripting.Core.Classes
             
         }
 
-        public Data(IDictionary<string, object> dictionary)
+        public Data(IDictionary<string, object>? dictionary)
         {
             if (dictionary != null)
             {
@@ -20,7 +20,7 @@ namespace DiGi.Scripting.Core.Classes
             }
         }
 
-        public Data(IEnumerable<KeyValuePair<string, dynamic>> keyValuePairs)
+        public Data(IEnumerable<KeyValuePair<string, dynamic>>? keyValuePairs)
         {
             if(keyValuePairs != null)
             {

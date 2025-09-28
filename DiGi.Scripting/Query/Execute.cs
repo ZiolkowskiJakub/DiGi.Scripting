@@ -1,5 +1,5 @@
-﻿using DiGi.Scripting.Core.Classes;
-using DiGi.Scripting.Core.Enums;
+﻿using DiGi.Scripting.Classes;
+using DiGi.Scripting.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,10 +1,10 @@
 ﻿using DiGi.Core.Classes;
-using DiGi.Scripting.Core.Interfaces;
+using DiGi.Scripting.Interfaces;
 using System.Collections.Generic;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
-namespace DiGi.Scripting.Core.Classes
+namespace DiGi.Scripting.Classes
 {
     public abstract class Script : SerializableObject, IScriptingSerializableObject
     {

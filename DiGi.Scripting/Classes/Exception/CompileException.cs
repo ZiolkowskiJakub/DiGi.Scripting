@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace DiGi.Scripting.Core.Classes
+namespace DiGi.Scripting.Classes
 {
     public class CompileException : Exception
     {
-        public CompileException(string message) 
+        public CompileException(string? message) 
             :base(message)
         { 
         }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DiGi.Scripting.Core.Classes
+namespace DiGi.Scripting.Classes
 {
     public class CodeMissingException : Exception
     {

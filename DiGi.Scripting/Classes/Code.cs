@@ -1,12 +1,9 @@
 ﻿using DiGi.Core.Classes;
-using DiGi.Scripting.Core.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using DiGi.Scripting.Interfaces;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
-namespace DiGi.Scripting.Core.Classes
+namespace DiGi.Scripting.Classes
 {
     public sealed class Code : SerializableObject, IScriptingSerializableObject
     {

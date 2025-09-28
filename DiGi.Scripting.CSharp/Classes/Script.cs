@@ -1,4 +1,4 @@
-﻿using DiGi.Scripting.Core.Classes;
+﻿using DiGi.Scripting.Classes;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Scripting;
 using Microsoft.CodeAnalysis.Scripting;
@@ -11,7 +11,7 @@ using System.Text.Json.Serialization;
 
 namespace DiGi.Scripting.CSharp.Classes
 {
-    public class Script : Core.Classes.Script
+    public class Script : Scripting.Classes.Script
     {
         [JsonInclude, JsonPropertyName("References")]
         private HashSet<string>? references;

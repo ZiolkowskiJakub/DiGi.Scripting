@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36401.2
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiGi.Scripting.Core", "DiGi.Scripting\DiGi.Scripting.Core.csproj", "{09024A2F-5482-4CD4-8598-450817CE617C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiGi.Scripting", "DiGi.Scripting\DiGi.Scripting.csproj", "{09024A2F-5482-4CD4-8598-450817CE617C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiGi.Scripting.Python", "DiGi.Scripting.Python\DiGi.Scripting.Python.csproj", "{3ED4F22B-ED0E-46D6-8798-461C6CF05586}"
 EndProject

@@ -1,4 +1,4 @@
-﻿using DiGi.Scripting.Core.Classes;
+﻿using DiGi.Scripting.Classes;
 using Microsoft.Scripting.Hosting;
 using System;
 using System.Collections.Generic;
@@ -6,20 +6,20 @@ using System.Text.Json.Nodes;
 
 namespace DiGi.Scripting.Python.Classes
 {
-    public class Script : Core.Classes.Script
+    public class Script : Scripting.Classes.Script
     {
-        public Script(Code code, IEnumerable<VariableType> inputVariableTypes, IEnumerable<VariableType> outputVariableTypes) 
+        public Script(Code? code, IEnumerable<VariableType> inputVariableTypes, IEnumerable<VariableType> outputVariableTypes) 
             : base(code, inputVariableTypes, outputVariableTypes)
         {
         }
 
-        public Script(Script script)
+        public Script(Script? script)
             : base(script)
         {
 
         }
 
-        public Script(JsonObject jsonObject)
+        public Script(JsonObject? jsonObject)
             : base(jsonObject) 
         {
             

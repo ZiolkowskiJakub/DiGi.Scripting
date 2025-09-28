@@ -1,4 +1,4 @@
-﻿namespace DiGi.Scripting.Core.Classes
+﻿namespace DiGi.Scripting.Classes
 {
     public class Output : Variable
     {

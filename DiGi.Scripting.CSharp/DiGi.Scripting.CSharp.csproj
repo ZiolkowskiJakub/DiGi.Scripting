@@ -27,7 +27,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\DiGi.Scripting\DiGi.Scripting.Core.csproj" />
+	  <ProjectReference Include="..\DiGi.Scripting\DiGi.Scripting.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
