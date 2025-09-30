@@ -73,26 +73,26 @@ namespace DiGi.Scripting.CSharp.Classes
                             continue;
                         }
 
-                        code = code?.Replace(string.Format("[{0}]", name), string.Format(@"Dictionary[""[0]""]", name));
+                        code = code?.Replace(string.Format("[{0}]", name), string.Format(@"Dictionary[""{0}""]", name));
                         inputData_Temp[name!] = value;
                     }
                 }
             }
 
             ScriptOptions scriptOptions = ScriptOptions.Default;
-            if(references != null)
+            if (references != null)
             {
-                scriptOptions.AddReferences(references);
+                scriptOptions = scriptOptions.AddReferences(references);
             }
 
             if (imports != null)
             {
-                scriptOptions.AddImports(imports);
+                scriptOptions = scriptOptions.AddImports(imports);
             }
 
-            Script<object> script = CSharpScript.Create(code, ScriptOptions.Default, typeof(Data));
+            Script<object> script = CSharpScript.Create(code, scriptOptions, typeof(Data));
 
-            ImmutableArray<Diagnostic> immutableArray = script.Compile();
+            ImmutableArray <Diagnostic> immutableArray = script.Compile();
             if(immutableArray != null)
             {
                 foreach(Diagnostic diagnostic in immutableArray)

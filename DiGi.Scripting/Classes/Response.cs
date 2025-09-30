@@ -59,7 +59,7 @@ namespace DiGi.Scripting.Classes
         {
             get
             {
-                return exception != null;
+                return exception == null;
             }
         }
 
