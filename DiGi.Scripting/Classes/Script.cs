@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 
 namespace DiGi.Scripting.Classes
 {
-    public abstract class Script : SerializableObject, IScriptingSerializableObject
+    public abstract class Script : SerializableObject, IScript
     {
         [JsonInclude, JsonPropertyName("Code")]
         private Code? code;
