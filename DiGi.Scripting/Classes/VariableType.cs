@@ -11,8 +11,8 @@ namespace DiGi.Scripting.Classes
     {
         [JsonInclude, JsonPropertyName("Name")]
         private readonly string? name;
-        
-        [JsonIgnore]
+
+        [JsonInclude, JsonPropertyName("Type")]
         private Type? type;
 
         public VariableType(string? name, Type? type) 
@@ -52,19 +52,6 @@ namespace DiGi.Scripting.Classes
             get
             {
                 return type;
-            }
-        }
-
-        [JsonInclude, JsonPropertyName(DiGi.Core.Constans.Serialization.PropertyName.Type)]
-        private string? FullTypeName
-        {
-            get
-            {
-                return DiGi.Core.Query.FullTypeName(type);
-            }
-            set
-            {
-                type = DiGi.Core.Query.Type(value, true);
             }
         }
     }
