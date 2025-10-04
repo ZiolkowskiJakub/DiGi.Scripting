@@ -7,10 +7,15 @@ namespace DiGi.Scripting.Classes
 {
     public abstract class Variable : IScriptingObject, INamedObject
     {
+        private readonly object? value;
+
         [JsonInclude, JsonPropertyName("VariableType")]
         private readonly VariableType? variableType;
+        
+        protected Variable()
+        {
 
-        private readonly object? value;
+        }
 
         public Variable(VariableType? variableType, object? value)
         {
@@ -22,6 +27,15 @@ namespace DiGi.Scripting.Classes
         {
             variableType = new VariableType(name, type);
             this.value = value;
+        }
+
+        public Variable(Variable? variable)
+        {
+            if(variable is not null)
+            {
+                variableType = DiGi.Core.Query.Clone(variable.variableType);
+                value = variable.value;
+            }
         }
 
         [JsonIgnore]
