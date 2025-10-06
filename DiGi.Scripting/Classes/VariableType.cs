@@ -13,7 +13,7 @@ namespace DiGi.Scripting.Classes
         private readonly string? name;
 
         [JsonInclude, JsonPropertyName("Type")]
-        private Type? type;
+        private readonly Type? type;
 
         public VariableType(string? name, Type? type) 
         { 

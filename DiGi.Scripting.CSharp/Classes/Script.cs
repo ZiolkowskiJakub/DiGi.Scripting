@@ -51,8 +51,8 @@ namespace DiGi.Scripting.CSharp.Classes
             Data inputData_Temp = [];
             if (inputData != null && inputData.Count() != 0)
             {
-                Dictionary<string, object> dictionary = [];
-                foreach (KeyValuePair<string, object> input in inputData)
+                Dictionary<string, object?> dictionary = [];
+                foreach (KeyValuePair<string, object?> input in inputData)
                 {
                     if (string.IsNullOrWhiteSpace(input.Key))
                     {
@@ -68,7 +68,7 @@ namespace DiGi.Scripting.CSharp.Classes
                     {
                         string? name = variableType?.Name;
 
-                        if (string.IsNullOrWhiteSpace(name) || !dictionary.TryGetValue(name!, out object value))
+                        if (string.IsNullOrWhiteSpace(name) || !dictionary.TryGetValue(name!, out object? value))
                         {
                             continue;
                         }

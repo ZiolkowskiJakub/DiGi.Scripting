@@ -15,7 +15,7 @@ namespace DiGi.Scripting.Classes
         public SerializableOutput(JsonObject? jsonObject)
             :base()
         {
-
+            FromJsonObject(jsonObject);
         }
 
         public SerializableOutput(string? name, double value)

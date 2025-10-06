@@ -15,7 +15,7 @@ namespace DiGi.Scripting.Classes
         public SerializableInput(JsonObject? jsonObject)
             :base()
         {
-
+            FromJsonObject(jsonObject);
         }
 
         public SerializableInput(string? name, double value)

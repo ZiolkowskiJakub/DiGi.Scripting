@@ -7,6 +7,7 @@ namespace DiGi.Scripting.Classes
 {
     public abstract class Variable : IScriptingObject, INamedObject
     {
+        [JsonInclude, JsonPropertyName("Value")]
         private readonly object? value;
 
         [JsonInclude, JsonPropertyName("VariableType")]

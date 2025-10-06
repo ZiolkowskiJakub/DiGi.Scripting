@@ -1,4 +1,5 @@
 ﻿using DiGi.Core.Classes;
+using DiGi.Scripting.Core;
 using DiGi.Scripting.Interfaces;
 using System.Collections.Generic;
 using System.Text.Json.Nodes;
@@ -117,5 +118,10 @@ namespace DiGi.Scripting.Classes
         }
 
         public abstract Response? Execute(Data? inputData = null);
+
+        public Response? Execute<TInput>(IEnumerable<TInput>? inputs = null) where TInput : IInput
+        {
+            return Execute(inputs != null ? Create.Data(inputs) : null);
+        }
     }
 }

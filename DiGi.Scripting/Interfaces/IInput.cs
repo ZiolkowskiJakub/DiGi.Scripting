@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DiGi.Scripting.Interfaces
+﻿namespace DiGi.Scripting.Interfaces
 {
-    public interface IInput : IScriptingObject
+    public interface IInput : IVariable
     {
+
     }
 }

@@ -42,8 +42,8 @@ namespace DiGi.Scripting.Python.Classes
             ScriptScope scriptScope = scriptEngine.CreateScope();
             if(inputData != null && inputData.Count != 0)
             {
-                Dictionary<string, object> dictionary = [];
-                foreach(KeyValuePair<string, object> input in inputData)
+                Dictionary<string, object?> dictionary = [];
+                foreach(KeyValuePair<string, object?> input in inputData)
                 {
                     if(string.IsNullOrWhiteSpace(input.Key))
                     {
@@ -57,7 +57,7 @@ namespace DiGi.Scripting.Python.Classes
                 {
                     foreach (VariableType variableType in inputVariableTypes)
                     {
-                        if (string.IsNullOrWhiteSpace(variableType?.Name) || !dictionary.TryGetValue(variableType!.Name!, out object value))
+                        if (string.IsNullOrWhiteSpace(variableType?.Name) || !dictionary.TryGetValue(variableType!.Name!, out object? value))
                         {
                             continue;
                         }
