@@ -56,5 +56,14 @@ namespace DiGi.Scripting.Classes
                 return value;
             }
         }
+
+        [JsonIgnore]
+        public VariableType? VariableType
+        {
+            get
+            {
+                return DiGi.Core.Query.Clone(variableType);
+            }
+        }
     }
 }
