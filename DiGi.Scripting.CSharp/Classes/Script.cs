@@ -13,12 +13,12 @@ namespace DiGi.Scripting.CSharp.Classes
 {
     public class Script : Scripting.Classes.Script
     {
-        [JsonInclude, JsonPropertyName("References")]
-        private HashSet<string>? references;
-
         [JsonInclude, JsonPropertyName("Imports")]
         private HashSet<string>? imports;
 
+        [JsonInclude, JsonPropertyName("References")]
+        private HashSet<string>? references;
+        
         public Script(Code? code, IEnumerable<VariableType>? inputVariableTypes, IEnumerable<VariableType>? outputVariableTypes)
             : base(code, inputVariableTypes, outputVariableTypes)
         {
@@ -34,6 +34,32 @@ namespace DiGi.Scripting.CSharp.Classes
             : base(jsonObject)
         {
 
+        }
+
+        [JsonIgnore]
+        public HashSet<string>? Imports
+        {
+            get
+            {
+                return imports == null ? null : [.. imports];
+            }
+            set
+            {
+                imports = value == null ? null : [.. value];
+            }
+        }
+
+        [JsonIgnore]
+        public HashSet<string>? References
+        {
+            get
+            {
+                return references == null ? null : [.. references];
+            }
+            set
+            {
+                references = value == null ? null : [.. value];
+            }
         }
 
         public override Response? Execute(Data? inputData = null)
@@ -156,32 +182,6 @@ namespace DiGi.Scripting.CSharp.Classes
             }
 
             return new Response(outputs);
-        }
-
-        [JsonIgnore]
-        public HashSet<string>? References
-        {
-            get
-            {
-                return references == null ? null : [.. references];
-            }
-            set
-            {
-                references = value == null ? null : [.. value];
-            }
-        }
-
-        [JsonIgnore]
-        public HashSet<string>? Imports
-        {
-            get
-            {
-                return imports == null ? null : [.. imports];
-            }
-            set
-            {
-                imports = value == null ? null : [.. value];
-            }
         }
     }
 }

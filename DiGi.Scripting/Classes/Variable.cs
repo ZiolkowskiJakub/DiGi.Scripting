@@ -12,11 +12,6 @@ namespace DiGi.Scripting.Classes
 
         [JsonInclude, JsonPropertyName("VariableType")]
         private readonly VariableType? variableType;
-        
-        protected Variable()
-        {
-
-        }
 
         public Variable(VariableType? variableType, object? value)
         {
@@ -32,13 +27,18 @@ namespace DiGi.Scripting.Classes
 
         public Variable(Variable? variable)
         {
-            if(variable is not null)
+            if (variable is not null)
             {
                 variableType = DiGi.Core.Query.Clone(variable.variableType);
                 value = variable.value;
             }
         }
 
+        protected Variable()
+        {
+
+        }
+        
         [JsonIgnore]
         public string? Name
         {

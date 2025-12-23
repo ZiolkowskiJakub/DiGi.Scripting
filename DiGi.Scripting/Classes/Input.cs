@@ -1,5 +1,4 @@
-﻿using DiGi.Core.Interfaces;
-using DiGi.Scripting.Interfaces;
+﻿using DiGi.Scripting.Interfaces;
 using System;
 
 namespace DiGi.Scripting.Classes
@@ -24,7 +23,7 @@ namespace DiGi.Scripting.Classes
         }
 
         protected Input()
-                                    : base()
+            : base()
         {
         }
     }
