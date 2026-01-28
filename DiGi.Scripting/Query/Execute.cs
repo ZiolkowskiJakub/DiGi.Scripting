@@ -96,7 +96,7 @@ namespace DiGi.Scripting.Core
             List<Response?>? result = [.. Enumerable.Repeat<Response?>(null, count)];
             Parallel.For(0, count, parallelOptions, (i, state) =>
             {
-                if(parallelOptions.CancellationToken != null && parallelOptions.CancellationToken.IsCancellationRequested)
+                if (parallelOptions.CancellationToken != null && parallelOptions.CancellationToken.IsCancellationRequested)
                 {
                     return;
                 }
@@ -111,7 +111,7 @@ namespace DiGi.Scripting.Core
                 }
             });
 
-            if(index != -1)
+            if (index != -1)
             {
                 stopResponse = result[index];
             }

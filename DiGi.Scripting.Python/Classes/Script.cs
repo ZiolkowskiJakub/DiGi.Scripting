@@ -8,7 +8,7 @@ namespace DiGi.Scripting.Python.Classes
 {
     public class Script : Scripting.Classes.Script
     {
-        public Script(Code? code, IEnumerable<VariableType> inputVariableTypes, IEnumerable<VariableType> outputVariableTypes) 
+        public Script(Code? code, IEnumerable<VariableType> inputVariableTypes, IEnumerable<VariableType> outputVariableTypes)
             : base(code, inputVariableTypes, outputVariableTypes)
         {
         }
@@ -16,20 +16,18 @@ namespace DiGi.Scripting.Python.Classes
         public Script(Script? script)
             : base(script)
         {
-
         }
 
         public Script(JsonObject? jsonObject)
-            : base(jsonObject) 
+            : base(jsonObject)
         {
-            
         }
 
         public override Response Execute(Data? inputData = null)
         {
             Code? code = Code;
 
-            if(string.IsNullOrWhiteSpace(code))
+            if (string.IsNullOrWhiteSpace(code))
             {
                 return new Response(new CodeMissingException());
             }
@@ -40,12 +38,12 @@ namespace DiGi.Scripting.Python.Classes
             ScriptEngine scriptEngine = IronPython.Hosting.Python.CreateEngine();
 
             ScriptScope scriptScope = scriptEngine.CreateScope();
-            if(inputData != null && inputData.Count != 0)
+            if (inputData != null && inputData.Count != 0)
             {
                 Dictionary<string, object?> dictionary = [];
-                foreach(KeyValuePair<string, object?> input in inputData)
+                foreach (KeyValuePair<string, object?> input in inputData)
                 {
-                    if(string.IsNullOrWhiteSpace(input.Key))
+                    if (string.IsNullOrWhiteSpace(input.Key))
                     {
                         continue;
                     }
@@ -53,7 +51,7 @@ namespace DiGi.Scripting.Python.Classes
                     dictionary[input.Key] = input.Value;
                 }
 
-                if(inputVariableTypes is not null)
+                if (inputVariableTypes is not null)
                 {
                     foreach (VariableType variableType in inputVariableTypes)
                     {
@@ -71,23 +69,23 @@ namespace DiGi.Scripting.Python.Classes
             {
                 scriptEngine.Execute(code, scriptScope);
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 return new Response(exception);
             }
 
             List<Output>? outputs = null;
-            if(outputVariableTypes != null)
+            if (outputVariableTypes != null)
             {
                 outputs = [];
-                foreach(VariableType variableType in outputVariableTypes)
+                foreach (VariableType variableType in outputVariableTypes)
                 {
-                    if(string.IsNullOrWhiteSpace(variableType?.Name))
+                    if (string.IsNullOrWhiteSpace(variableType?.Name))
                     {
                         continue;
                     }
 
-                    if(!scriptScope.TryGetVariable(variableType!.Name, out dynamic value))
+                    if (!scriptScope.TryGetVariable(variableType!.Name, out dynamic value))
                     {
                         continue;
                     }

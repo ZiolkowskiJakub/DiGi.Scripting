@@ -36,9 +36,8 @@ namespace DiGi.Scripting.Classes
 
         protected Variable()
         {
-
         }
-        
+
         [JsonIgnore]
         public string? Name
         {

@@ -54,7 +54,7 @@ namespace DiGi.Scripting.Classes
                 }
             }
         }
-        
+
         public bool Succeeded
         {
             get
@@ -62,6 +62,5 @@ namespace DiGi.Scripting.Classes
                 return exception == null;
             }
         }
-
     }
 }

@@ -15,25 +15,24 @@ namespace DiGi.Scripting.Classes
         [JsonInclude, JsonPropertyName("Type")]
         private readonly Type? type;
 
-        public VariableType(string? name, Type? type) 
-        { 
+        public VariableType(string? name, Type? type)
+        {
             this.name = name;
             this.type = type;
         }
 
         public VariableType(JsonObject? jsonObject)
-            :base(jsonObject)
+            : base(jsonObject)
         {
-
         }
 
         public VariableType(VariableType? variableType)
             : base(variableType)
         {
-            if(variableType != null)
+            if (variableType != null)
             {
-                name= variableType.Name;
-                type= variableType.Type;
+                name = variableType.Name;
+                type = variableType.Type;
             }
         }
 

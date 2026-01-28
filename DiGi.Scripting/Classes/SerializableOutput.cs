@@ -9,109 +9,92 @@ namespace DiGi.Scripting.Classes
         public SerializableOutput(SerializableOutput? serializableOutput)
             : base(serializableOutput)
         {
-
         }
 
         public SerializableOutput(JsonObject? jsonObject)
-            :base()
+            : base()
         {
             FromJsonObject(jsonObject);
         }
 
         public SerializableOutput(string? name, double value)
-            :base(name, typeof(double), value)
+            : base(name, typeof(double), value)
         {
-
         }
 
         public SerializableOutput(string? name, string value)
             : base(name, typeof(string), value)
         {
-
         }
 
         public SerializableOutput(string? name, System.Guid value)
             : base(name, typeof(System.Guid), value)
         {
-
         }
 
         public SerializableOutput(string? name, int value)
             : base(name, typeof(int), value)
         {
-
         }
 
         public SerializableOutput(string? name, byte value)
             : base(name, typeof(byte), value)
         {
-
         }
 
         public SerializableOutput(string? name, long value)
             : base(name, typeof(long), value)
         {
-
         }
 
         public SerializableOutput(string? name, ISerializableObject value)
             : base(name, value?.GetType() ?? typeof(ISerializableObject), value)
         {
-
         }
 
         public SerializableOutput(string? name, System.DateTime value)
             : base(name, typeof(System.DateTime), value)
         {
-
         }
 
         public SerializableOutput(string? name, double[] value)
             : base(name, typeof(double[]), value)
         {
-
         }
 
         public SerializableOutput(string? name, string[] value)
             : base(name, typeof(string[]), value)
         {
-
         }
 
         public SerializableOutput(string? name, System.Guid[] value)
             : base(name, typeof(System.Guid[]), value)
         {
-
         }
 
         public SerializableOutput(string? name, int[] value)
             : base(name, typeof(int[]), value)
         {
-
         }
 
         public SerializableOutput(string? name, byte[] value)
             : base(name, typeof(byte[]), value)
         {
-
         }
 
         public SerializableOutput(string? name, long[] value)
             : base(name, typeof(long[]), value)
         {
-
         }
 
         public SerializableOutput(string? name, ISerializableObject[] value)
             : base(name, value?.GetType() ?? typeof(ISerializableObject[]), value)
         {
-
         }
 
         public SerializableOutput(string? name, System.DateTime[] value)
             : base(name, typeof(System.DateTime[]), value)
         {
-
         }
 
         public ISerializableObject? Clone()

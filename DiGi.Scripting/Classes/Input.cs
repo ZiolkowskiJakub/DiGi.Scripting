@@ -8,13 +8,11 @@ namespace DiGi.Scripting.Classes
         public Input(Input? input)
             : base(input)
         {
-
         }
 
         public Input(string? name, Type? type, object? value)
             : base(name, type, value)
         {
-
         }
 
         public Input(VariableType? variableType, object? value)

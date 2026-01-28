@@ -18,13 +18,12 @@ namespace DiGi.Scripting.Classes
         public Code(JsonObject? jsonObject)
             : base(jsonObject)
         {
-
         }
 
         public Code(Code? code)
-            :base(code)
+            : base(code)
         {
-            if(code != null)
+            if (code != null)
             {
                 value = code.value;
             }

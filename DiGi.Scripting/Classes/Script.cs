@@ -23,7 +23,6 @@ namespace DiGi.Scripting.Classes
             this.code = DiGi.Core.Query.Clone(code);
             InputVariableTypes = inputVariableTypes;
             OutputVariableTypes = outputVariableTypes;
-
         }
 
         public Script(Script? script)
@@ -40,7 +39,6 @@ namespace DiGi.Scripting.Classes
         public Script(JsonObject? jsonObject)
             : base(jsonObject)
         {
-
         }
 
         [JsonIgnore]
@@ -84,7 +82,6 @@ namespace DiGi.Scripting.Classes
                     inputDictionary[variableType!.Name!] = variableType;
                 }
             }
-
         }
 
         [JsonInclude, JsonPropertyName("OutputVariableTypes")]
@@ -114,7 +111,6 @@ namespace DiGi.Scripting.Classes
                     outputDictionary[variableType!.Name!] = variableType;
                 }
             }
-
         }
 
         public abstract Response? Execute(Data? inputData = null);

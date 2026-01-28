@@ -4,9 +4,8 @@ namespace DiGi.Scripting.Classes
 {
     public class Data : Dictionary<string, dynamic?>
     {
-        public Data() 
+        public Data()
         {
-            
         }
 
         public Data(IDictionary<string, object?>? dictionary)
@@ -22,7 +21,7 @@ namespace DiGi.Scripting.Classes
 
         public Data(IEnumerable<KeyValuePair<string, dynamic?>>? keyValuePairs)
         {
-            if(keyValuePairs != null)
+            if (keyValuePairs != null)
             {
                 foreach (KeyValuePair<string, dynamic?> keyValuePair in keyValuePairs)
                 {

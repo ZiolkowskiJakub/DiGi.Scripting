@@ -18,7 +18,7 @@ namespace DiGi.Scripting.CSharp.Classes
 
         [JsonInclude, JsonPropertyName("References")]
         private HashSet<string>? references;
-        
+
         public Script(Code? code, IEnumerable<VariableType>? inputVariableTypes, IEnumerable<VariableType>? outputVariableTypes)
             : base(code, inputVariableTypes, outputVariableTypes)
         {
@@ -27,13 +27,11 @@ namespace DiGi.Scripting.CSharp.Classes
         public Script(Script? script)
             : base(script)
         {
-
         }
 
         public Script(JsonObject? jsonObject)
             : base(jsonObject)
         {
-
         }
 
         [JsonIgnore]
@@ -88,7 +86,7 @@ namespace DiGi.Scripting.CSharp.Classes
                     dictionary[input.Key] = input.Value;
                 }
 
-                if(inputVariableTypes is not null)
+                if (inputVariableTypes is not null)
                 {
                     foreach (VariableType variableType in inputVariableTypes)
                     {
@@ -118,12 +116,12 @@ namespace DiGi.Scripting.CSharp.Classes
 
             Script<object> script = CSharpScript.Create(code, scriptOptions, typeof(Data));
 
-            ImmutableArray <Diagnostic> immutableArray = script.Compile();
-            if(immutableArray != null)
+            ImmutableArray<Diagnostic> immutableArray = script.Compile();
+            if (immutableArray != null)
             {
-                foreach(Diagnostic diagnostic in immutableArray)
+                foreach (Diagnostic diagnostic in immutableArray)
                 {
-                    if(diagnostic.Severity == DiagnosticSeverity.Error)
+                    if (diagnostic.Severity == DiagnosticSeverity.Error)
                     {
                         return new Response(new CompileException(diagnostic.GetMessage()));
                     }
@@ -141,18 +139,18 @@ namespace DiGi.Scripting.CSharp.Classes
                 return new Response(exception);
             }
 
-            if(scriptState?.Exception != null)
+            if (scriptState?.Exception != null)
             {
                 return new Response(scriptState.Exception);
             }
 
             List<Output>? outputs = null;
-            if(outputVariableTypes != null && outputVariableTypes.Count() != 0)
+            if (outputVariableTypes != null && outputVariableTypes.Count() != 0)
             {
                 outputs ??= [];
 
                 Dictionary<string, ScriptVariable>? dictionary = scriptState?.Variables.ToDictionary(x => x.Name);
-                if(dictionary != null)
+                if (dictionary != null)
                 {
                     foreach (VariableType variableType in outputVariableTypes)
                     {
