@@ -171,7 +171,7 @@ namespace DiGi.Scripting.CSharp.Classes
 
                 foreach (VariableType variableType in outputVariableTypes)
                 {
-                    if (variableType?.Name == Constans.VariableType.Name.Return)
+                    if (variableType?.Name == Constants.VariableType.Name.Return)
                     {
                         outputs.Add(new Output(variableType, scriptState?.ReturnValue));
                         break;

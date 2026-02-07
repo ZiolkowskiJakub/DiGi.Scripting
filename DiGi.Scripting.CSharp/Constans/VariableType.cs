@@ -1,4 +1,4 @@
-﻿namespace DiGi.Scripting.CSharp.Constans
+﻿namespace DiGi.Scripting.CSharp.Constants
 {
     public static class VariableType
     {
