@@ -23,7 +23,7 @@
 	<ItemGroup>
 		<PackageReference Include="IronPython" Version="3.4.2" />
 		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-		<PackageReference Include="System.Text.Json" Version="10.0.2" />
+		<PackageReference Include="System.Text.Json" Version="10.0.5" />
 	</ItemGroup>
 
 	<ItemGroup>
