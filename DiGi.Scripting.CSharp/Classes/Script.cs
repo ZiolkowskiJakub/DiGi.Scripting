@@ -11,6 +11,9 @@ using System.Text.Json.Serialization;
 
 namespace DiGi.Scripting.CSharp.Classes
 {
+    /// <summary>
+    /// Represents a C# script implementation that can be compiled and executed using the Roslyn scripting API.
+    /// </summary>
     public class Script : Scripting.Classes.Script
     {
         [JsonInclude, JsonPropertyName("Imports")]
@@ -19,21 +22,38 @@ namespace DiGi.Scripting.CSharp.Classes
         [JsonInclude, JsonPropertyName("References")]
         private HashSet<string>? references;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Script"/> class.
+        /// </summary>
+        /// <param name="code">The source code to be executed.</param>
+        /// <param name="inputVariableTypes">The collection of variable types used as inputs.</param>
+        /// <param name="outputVariableTypes">The collection of variable types expected as outputs.</param>
         public Script(Code? code, IEnumerable<VariableType>? inputVariableTypes, IEnumerable<VariableType>? outputVariableTypes)
             : base(code, inputVariableTypes, outputVariableTypes)
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Script"/> class by copying an existing script.
+        /// </summary>
+        /// <param name="script">The source script to copy.</param>
         public Script(Script? script)
             : base(script)
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Script"/> class from a JSON object.
+        /// </summary>
+        /// <param name="jsonObject">The JSON representation of the script.</param>
         public Script(JsonObject? jsonObject)
             : base(jsonObject)
         {
         }
 
+        /// <summary>
+        /// Gets or sets the set of namespaces to be imported during script execution.
+        /// </summary>
         [JsonIgnore]
         public HashSet<string>? Imports
         {
@@ -47,6 +67,9 @@ namespace DiGi.Scripting.CSharp.Classes
             }
         }
 
+        /// <summary>
+        /// Gets or sets the set of assembly references required for script compilation and execution.
+        /// </summary>
         [JsonIgnore]
         public HashSet<string>? References
         {
@@ -60,6 +83,11 @@ namespace DiGi.Scripting.CSharp.Classes
             }
         }
 
+        /// <summary>
+        /// Executes the C# script using the provided input data.
+        /// </summary>
+        /// <param name="inputData">The data to be passed into the script as globals.</param>
+        /// <returns>A <see cref="Response"/> containing the execution results or any encountered exceptions.</returns>
         public override Response? Execute(Data? inputData = null)
         {
             string? code = Code;
