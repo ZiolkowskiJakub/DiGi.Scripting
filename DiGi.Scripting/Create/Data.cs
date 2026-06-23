@@ -5,6 +5,7 @@ using System.Collections.Generic;
 namespace DiGi.Scripting.Core
 {
 #pragma warning disable CS1591
+
     public static partial class Create
 #pragma warning restore CS1591
     {
