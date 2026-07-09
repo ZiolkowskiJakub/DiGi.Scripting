@@ -1,4 +1,4 @@
-#### [DiGi\.Scripting](index.md 'index')
+#### [DiGi\.Scripting](DiGi.Scripting.Overview.md 'DiGi\.Scripting\.Overview')
 
 ## DiGi\.Scripting\.Core Namespace
 ### Classes
